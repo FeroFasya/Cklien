@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Pottery | Ceramic Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clay: {
+                            100: '#E8E4DC',
+                            300: '#D1C7BD',
+                            500: '#8C6B5D',
+                            800: '#2A2624',
+                            900: '#1A1817',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Memberikan ruang agar konten terbawah tidak tertutup bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-clay-900 text-clay-100 font-sans antialiased selection:bg-clay-500 selection:text-white relative min-h-screen">
+
+    <header class="fixed top-0 w-full z-40 bg-clay-900/90 backdrop-blur-md border-b border-clay-800 py-4 text-center">
+        <a href="#" class="font-serif text-lg tracking-widest text-clay-100">AI POTTERY<span
+                class="text-clay-500"></span></a>
+    </header>
+
+    <main class="pt-16">
+
+        <div id="page-home" class="tab-content fade-in block">
+            <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img src="hero.png" alt="Ceramic Texture"
+                        class="w-full h-full object-cover opacity-40 mix-blend-overlay">
+                    <div class="absolute inset-0 bg-gradient-to-b from-clay-900/50 via-clay-900/80 to-clay-900"></div>
+                </div>
+                <div class="relative z-10 text-center px-6 max-w-4xl">
+                    <h1 class="font-serif text-5xl md:text-7xl mb-4 text-clay-100 leading-tight">
+                        Shaped from clay, <br><span class="italic text-clay-300">time & stories.</span>
+                    </h1>
+                    <p class="text-clay-300 text-md md:text-xl font-light max-w-2xl mx-auto tracking-wide">
+                        Handmade ceramic with meaning.
+                    </p>
+                </div>
+            </section>
+
+            <section class="py-16 px-6 max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="font-serif text-3xl mb-4 text-clay-100">Made with Story.</h2>
+                    <p class="text-clay-300 font-light leading-relaxed mb-6 text-sm">
+                        At Ai Pottery, we believe that every piece of clay holds a memory. Our studio is a sanctuary
+                        where earth meets intention. Based in Bandung, we recycle our clay and respect the process.
+                    </p>
+                    <div class="aspect-square bg-clay-800 overflow-hidden mx-auto max-w-md border border-clay-800">
+                        <img src="main.png" alt="Pottery Making" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-workshops" class="tab-content fade-in hidden">
+            <section class="py-12 px-6 max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="text-clay-500 text-xs tracking-widest uppercase block mb-2">Join Us</span>
+                    <h2 class="font-serif text-3xl text-clay-100">Studio Workshops</h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="bg-clay-900 border border-clay-800 p-6 flex flex-col">
+                        <h3 class="font-serif text-xl text-clay-100 mb-1">Basic Handbuilding</h3>
+                        <p class="text-xs text-clay-500 tracking-widest uppercase mb-3">2.5 Hours • Beginner</p>
+                        <p class="text-clay-300 font-light text-sm mb-6 flex-grow">Learn the fundamental techniques of
+                            pinching, coiling, and slab building.</p>
+                        <button
+                            class="w-full bg-clay-100 text-clay-900 py-3 text-xs tracking-widest uppercase font-medium hover:bg-clay-300 transition-colors">
+                            Book via WhatsApp
+                        </button>
+                    </div>
+
+                    <div class="bg-clay-900 border border-clay-800 p-6 flex flex-col relative">
+                        <div
+                            class="absolute top-0 right-0 bg-clay-500 text-white text-[10px] tracking-widest uppercase px-2 py-1 m-3">
+                            Popular</div>
+                        <h3 class="font-serif text-xl text-clay-100 mb-1">Wheel Throwing</h3>
+                        <p class="text-xs text-clay-500 tracking-widest uppercase mb-3">3 Hours • All Levels</p>
+                        <p class="text-clay-300 font-light text-sm mb-6 flex-grow">Experience the meditative process of
+                            shaping clay on the potter's wheel.</p>
+                        <button
+                            class="w-full bg-clay-100 text-clay-900 py-3 text-xs tracking-widest uppercase font-medium hover:bg-clay-300 transition-colors">
+                            Book via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-gallery" class="tab-content fade-in hidden">
+            <section class="py-12 px-4 max-w-7xl mx-auto">
+                <h2 class="font-serif text-3xl text-clay-100 mb-8 text-center">Recent Works</h2>
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="aspect-square bg-clay-800"><img src="c4.png"
+                            class="w-full h-full object-cover opacity-80"></div>
+                    <div class="aspect-square bg-clay-800"><img src="c2.png"
+                            class="w-full h-full object-cover opacity-80"></div>
+                    <div class="aspect-square bg-clay-800"><img src="c3.png"
+                            class="w-full h-full object-cover opacity-80"></div>
+                    <div class="aspect-square bg-clay-800"><img src="c5.png"
+                            class="w-full h-full object-cover opacity-80"></div>
+                </div>
+                <div class="text-center mt-12 mb-8">
+                    <p class="text-clay-500 text-xs font-light">
+                        &copy; 2026 Ai Pottery. Website by MyWebu.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <nav class="fixed bottom-0 w-full z-50 bg-clay-900 border-t border-clay-800 pb-safe">
+        <div class="flex justify-around items-center py-3 px-2">
+
+            <button onclick="switchTab('home')" id="btn-home"
+                class="nav-btn flex flex-col items-center w-full text-clay-100 transition-colors">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+                <span class="text-[10px] tracking-widest uppercase">Home</span>
+            </button>
+
+            <button onclick="switchTab('workshops')" id="btn-workshops"
+                class="nav-btn flex flex-col items-center w-full text-clay-500 transition-colors">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                    </path>
+                </svg>
+                <span class="text-[10px] tracking-widest uppercase">Classes</span>
+            </button>
+
+            <button onclick="switchTab('gallery')" id="btn-gallery"
+                class="nav-btn flex flex-col items-center w-full text-clay-500 transition-colors">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                    </path>
+                </svg>
+                <span class="text-[10px] tracking-widest uppercase">Gallery</span>
+            </button>
+
+        </div>
+    </nav>
+
+    <script>
+        function switchTab(tabName) {
+            // 1. Sembunyikan semua konten
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => {
+                tab.classList.remove('block');
+                tab.classList.add('hidden');
+            });
+
+            // 2. Tampilkan konten yang dipilih
+            const selectedTab = document.getElementById('page-' + tabName);
+            if (selectedTab) {
+                selectedTab.classList.remove('hidden');
+                selectedTab.classList.add('block');
+            }
+
+            // 3. Reset warna semua tombol navigasi menjadi redup (clay-500)
+            const allBtns = document.querySelectorAll('.nav-btn');
+            allBtns.forEach(btn => {
+                btn.classList.remove('text-clay-100');
+                btn.classList.add('text-clay-500');
+            });
+
+            // 4. Ubah warna tombol yang sedang aktif menjadi terang (clay-100)
+            const activeBtn = document.getElementById('btn-' + tabName);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-clay-500');
+                activeBtn.classList.add('text-clay-100');
+            }
+
+            // Opsional: scroll ke paling atas layar saat pindah tab
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+
+</html>
