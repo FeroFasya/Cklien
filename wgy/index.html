@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Got You | Event Organizer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        // Brand colors extracted from their logo/IG
+                        brand: {
+                            gray: '#9b9b9b', // The gray from their square logo background
+                            dark: '#18181b', // Deep zinc/charcoal for text
+                            light: '#f4f4f5' // Light zinc for backgrounds
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom subtle animations */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Image hover zoom effect */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 0.7s ease;
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Glassmorphism for scrolling navbar */
+        .nav-scrolled {
+            background-color: rgba(24, 24, 27, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-dark font-sans antialiased selection:bg-brand-gray selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+            <!-- LOGO PLACEHOLDER -->
+            <!-- FERO: Ganti isi src ini dengan path logo mereka nanti. Aku set text putih kalau belum ada logo. -->
+            <a href="#" class="flex items-center gap-3 z-10 group">
+                <img src="logo.png" 
+                     alt="We Got You Logo" 
+                     class="h-10 w-auto rounded opacity-90 group-hover:opacity-100 transition duration-300 shadow-sm"
+                     id="brandLogo">
+                <span class="font-serif text-xl md:text-2xl font-bold tracking-widest text-white mix-blend-difference hidden sm:block">
+                    <!-- WE GOT YOU -->
+                </span>
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white mix-blend-difference z-10">
+                <a href="#what-we-do" class="hover:text-brand-gray transition">Services</a>
+                <a href="#about" class="hover:text-brand-gray transition">About</a>
+                <a href="#contact" class="hover:text-brand-gray transition">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white mix-blend-difference z-10">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" 
+                 alt="Elegant Event Setup" 
+                 class="w-full h-full object-cover object-center filter brightness-50" />
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto fade-in-up">
+            <p class="text-zinc-200 text-sm md:text-base uppercase tracking-[0.3em] mb-4">Event Planner</p>
+            <h1 class="font-serif text-5xl md:text-7xl text-white mb-6 leading-tight">
+                Where Every <br/><i class="text-brand-gray">Detail</i> Matters.
+            </h1>
+            <p class="text-zinc-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                Concept &bull; Planning &bull; Execution
+            </p>
+            <a href="#what-we-do" class="inline-block border border-white text-white px-8 py-3 uppercase tracking-widest text-xs hover:bg-white hover:text-brand-dark transition duration-300">
+                What We Do
+            </a>
+        </div>
+    </section>
+
+    <!-- NEW: What We Do Section (Based on image 2) -->
+    <section id="what-we-do" class="py-20 md:py-32 px-4 bg-brand-light">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <p class="text-brand-gray uppercase tracking-[0.2em] text-sm mb-2 font-medium">Layanan Kami</p>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-dark font-bold">WHAT WE DO</h2>
+                <div class="w-16 h-1 bg-brand-gray mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-center">
+                <!-- 1 -->
+                <div class="fade-in-up delay-100 group p-6 hover:bg-white rounded-lg transition duration-300 hover:shadow-xl">
+                    <i class="fas fa-building text-4xl md:text-5xl text-brand-gray mb-6 group-hover:text-brand-dark transition duration-300"></i>
+                    <h3 class="font-sans font-medium uppercase tracking-wider text-sm md:text-base text-brand-dark">Corporate Events</h3>
+                </div>
+                <!-- 2 -->
+                <div class="fade-in-up delay-200 group p-6 hover:bg-white rounded-lg transition duration-300 hover:shadow-xl">
+                    <i class="fas fa-ring text-4xl md:text-5xl text-brand-gray mb-6 group-hover:text-brand-dark transition duration-300"></i>
+                    <h3 class="font-sans font-medium uppercase tracking-wider text-sm md:text-base text-brand-dark">Wedding</h3>
+                </div>
+                <!-- 3 -->
+                <div class="fade-in-up delay-300 group p-6 hover:bg-white rounded-lg transition duration-300 hover:shadow-xl">
+                    <i class="fas fa-lightbulb text-4xl md:text-5xl text-brand-gray mb-6 group-hover:text-brand-dark transition duration-300"></i>
+                    <h3 class="font-sans font-medium uppercase tracking-wider text-sm md:text-base text-brand-dark">Branding</h3>
+                </div>
+                <!-- 4 -->
+                <div class="fade-in-up delay-400 group p-6 hover:bg-white rounded-lg transition duration-300 hover:shadow-xl">
+                    <i class="fas fa-glass-cheers text-4xl md:text-5xl text-brand-gray mb-6 group-hover:text-brand-dark transition duration-300"></i>
+                    <h3 class="font-sans font-medium uppercase tracking-wider text-sm md:text-base text-brand-dark">Party</h3>
+                </div>
+                <!-- 5 -->
+                <div class="fade-in-up delay-500 group p-6 hover:bg-white rounded-lg transition duration-300 hover:shadow-xl">
+                    <i class="fas fa-store text-4xl md:text-5xl text-brand-gray mb-6 group-hover:text-brand-dark transition duration-300"></i>
+                    <h3 class="font-sans font-medium uppercase tracking-wider text-sm md:text-base text-brand-dark">Bazaar</h3>
+                </div>
+                <!-- 6 -->
+                <div class="fade-in-up delay-500 group p-6 hover:bg-white rounded-lg transition duration-300 hover:shadow-xl">
+                    <i class="fas fa-comments text-4xl md:text-5xl text-brand-gray mb-6 group-hover:text-brand-dark transition duration-300"></i>
+                    <h3 class="font-sans font-medium uppercase tracking-wider text-sm md:text-base text-brand-dark">Consulting</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Category Section (Deep Dive / Portfolio CTA) -->
+    <section id="portfolio" class="py-20 md:py-32 px-4 md:px-12 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-16 fade-in-up">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Tailored Experiences</h2>
+            <p class="text-zinc-500 max-w-2xl mx-auto font-light">Eksplorasi mahakarya kami. Dari momen intim yang tak terlupakan hingga acara skala besar yang spektakuler.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            
+            <!-- Category 1: Wedding -->
+            <div class="group img-zoom-container relative h-[500px] md:h-[600px] bg-zinc-200 cursor-pointer fade-in-up delay-200">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop" 
+                     alt="Wedding Event" 
+                     class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent flex flex-col justify-end p-8 md:p-12 transition-opacity duration-300">
+                    <h3 class="font-serif text-3xl text-white mb-2">Wedding & Intimate</h3>
+                    <p class="text-zinc-300 text-sm mb-6 leading-relaxed hidden group-hover:block transition-all duration-500">
+                        Merencanakan hari bahagia Anda dengan keanggunan. Dari akad, resepsi, hingga momen berharga bersama orang terdekat.
+                    </p>
+                    <a href="https://wa.me/62895364366091?text=Halo%20We%20Got%20You,%20saya%20ingin%20tanya%20detail%20untuk%20paket%20Wedding/Intimate%20Event." 
+                       target="_blank"
+                       class="inline-flex items-center text-white text-sm uppercase tracking-wider font-medium hover:text-brand-gray">
+                        Tanya Paket Wedding <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2: Corporate & School -->
+            <div class="group img-zoom-container relative h-[500px] md:h-[600px] bg-zinc-200 cursor-pointer fade-in-up delay-400">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" 
+                     alt="Corporate and School Event" 
+                     class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent flex flex-col justify-end p-8 md:p-12 transition-opacity duration-300">
+                    <h3 class="font-serif text-3xl text-white mb-2">Corporate & School</h3>
+                    <p class="text-zinc-300 text-sm mb-6 leading-relaxed hidden group-hover:block transition-all duration-500">
+                        Manajemen acara profesional untuk kebutuhan institusi, sekolah, maupun perusahaan. Skala besar, aman, dan tertib.
+                    </p>
+                    <a href="https://wa.me/62895364366091?text=Halo%20We%20Got%20You,%20saya%20ingin%20tanya%20detail%20untuk%20Corporate/School%20Event." 
+                       target="_blank"
+                       class="inline-flex items-center text-white text-sm uppercase tracking-wider font-medium hover:text-brand-gray">
+                        Tanya Penanganan Event <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-brand-gray uppercase tracking-widest text-sm mb-4 font-medium">Filosofi Kami</p>
+                <h2 class="font-serif text-4xl md:text-5xl mb-6 leading-tight">Mewujudkan Ide<br>Menjadi Panggung Nyata.</h2>
+                <p class="text-zinc-300 font-light leading-relaxed mb-6">
+                    Kami percaya bahwa setiap acara memiliki nyawanya sendiri. Dari konsep awal yang abstrak, perencanaan yang matang, hingga eksekusi tanpa celah di hari-H. Tidak ada detail yang terlalu kecil untuk diperhatikan.
+                </p>
+                <p class="text-zinc-300 font-light leading-relaxed mb-8">
+                    We Got You hadir agar Anda bisa duduk tenang, menikmati momen berharga Anda, sementara kami memastikan semuanya berjalan sempurna.
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="h-[1px] w-12 bg-brand-gray"></div>
+                    <span class="font-serif italic text-zinc-400">Tim We Got You</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="c1.png" alt="Event Detail 1" class="w-full h-48 md:h-64 object-cover rounded shadow-lg" />
+                <img src="c2.png" alt="Event Detail 2" class="w-full h-48 md:h-64 object-cover mt-8 rounded shadow-lg" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 bg-[#111113] text-center border-t border-zinc-800">
+        <div class="max-w-4xl mx-auto px-4">
+            
+            <!-- FERO: Placeholder logo untuk footer -->
+            <img src="logo.png" alt="We Got You Logo" class="h-16 w-16 mx-auto mb-6 rounded-full opacity-80">
+            
+            <h2 class="font-serif text-2xl text-white mb-6 tracking-widest">WE GOT YOU</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://instagram.com/wegotyou.eventorganizer" target="_blank" class="text-zinc-400 hover:text-white transition transform hover:scale-110">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="mailto:contact@wegotyou.com" class="text-zinc-400 hover:text-white transition transform hover:scale-110">
+                    <i class="far fa-envelope text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-zinc-500 text-sm">
+                &copy; 2026 We Got You Event Organizer. All rights reserved. <br>
+                <span class="text-xs mt-3 inline-block font-light text-zinc-600">
+                    Website crafted with elegance by <a href="#" class="text-zinc-400 hover:text-white transition font-medium">mywebu</a>
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Sticky Floating WhatsApp Button -->
+    <a href="https://wa.me/62895364366091?text=Halo%20admin%20We%20Got%20You,%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20event." 
+       target="_blank"
+       class="fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#1ebd5a] transition duration-300 z-50 flex items-center justify-center group"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out ml-0 group-hover:ml-3 text-sm font-medium">
+            Konsultasi Sekarang
+        </span>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Navbar Scrolled Effect
+        const navbar = document.getElementById('navbar');
+        const brandLogo = document.getElementById('brandLogo');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('py-2'); // Make navbar slightly thinner when scrolling
+            } else {
+                navbar.classList.remove('nav-scrolled', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
